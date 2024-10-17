@@ -3,14 +3,39 @@ import React, { useState } from "react";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 
-export default function ShorteneForm() {
-  const [url, setUrl] = useState<string>("");
+interface ShorteneFormProps {
+  handleUrlShortener: () => void;
+}
 
-  const handleSubmit = (e: React.FormEvent) => {
-    console.log("working");
+export default function ShorteneForm({
+  handleUrlShortener,
+}: ShorteneFormProps) {
+  const [url, setUrl] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  
+
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(url);
+    setIsLoading(true);
+    try {
+      const response = await fetch("/api/shorten", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url }),
+      });
+      await response.json();
+      setUrl("");
+      handleUrlShortener();
+    } catch (error) {
+      console.log("Error shortening the URL", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
+
   return (
     <form className="mb-4" onSubmit={handleSubmit}>
       <div className="space-y-4">
@@ -23,8 +48,13 @@ export default function ShorteneForm() {
           dir="rtl"
           required
         />
-        <Button className="w-full p-2" type="submit" dir="rtl">
-          URL را کوتاه کن
+        <Button
+          className="w-full p-2"
+          type="submit"
+          dir="rtl"
+          disabled={isLoading}
+        >
+          {isLoading ? "در حال کوتاه سازی URL" : " URL را کوتاه کن"}
         </Button>
       </div>
     </form>
