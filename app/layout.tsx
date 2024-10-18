@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Vazirmatn } from "next/font/google";
+import Footer from "@/components/Footer";
 
 const vazir = Vazirmatn({
   subsets: ["latin"],
@@ -18,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${vazir.className} antialiased`}>{children}</body>
+      <body className={`${vazir.className} antialiased`}>{children}<Footer/></body>
     </html>
   );
 }
