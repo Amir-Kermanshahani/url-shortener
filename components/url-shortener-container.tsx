@@ -10,7 +10,7 @@ export default function UrlShortenerContainer() {
     setRefreshKey((prev) => prev + 1);
   };
   return (
-    <div>
+    <div className="text-center flex flex-col gap-12">
       <ShortenForm handleUrlShortener={handleUrlShortener} />
       <UrlList key={refreshKey} />
     </div>

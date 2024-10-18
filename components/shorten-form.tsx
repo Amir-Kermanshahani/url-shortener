@@ -12,8 +12,6 @@ export default function ShorteneForm({
 }: ShorteneFormProps) {
   const [url, setUrl] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  
-
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
