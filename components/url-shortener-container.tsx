@@ -12,7 +12,7 @@ export default function UrlShortenerContainer() {
   return (
     <div className="text-center flex flex-col gap-12">
       <ShortenForm handleUrlShortener={handleUrlShortener} />
-      <UrlList key={refreshKey} />
+      <UrlList key={refreshKey} />  
     </div>
   );
 }

@@ -75,7 +75,7 @@ export default function UrlList() {
         آخرین URL ها
       </h2>
       <ul className="space-y-2">
-        {urls.map((url) => (
+        {urls?.map((url) => (
           <li
             className="flex items-center gap-2 justify-between bg-card rounded-md text-card-foreground border p-3"
             key={url.id}
