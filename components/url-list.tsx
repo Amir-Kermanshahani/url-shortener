@@ -77,7 +77,7 @@ export default function UrlList() {
       <ul className="space-y-2">
         {urls?.map((url) => (
           <li
-            className="flex items-center gap-2 justify-between bg-card rounded-md text-card-foreground border p-3"
+            className="flex items-center gap-2 justify-between bg-card rounded-md text-card-foreground border py-1 px-3"
             key={url.id}
           >
             <Link
@@ -85,7 +85,7 @@ export default function UrlList() {
               className="text-blue-500"
               target="_blank"
             >
-              {shortUrl(url.shortenedUrl)}
+              {`/${url.shortenedUrl}`}
             </Link>
             <div className="flex items-center gap-3">
               <Button
