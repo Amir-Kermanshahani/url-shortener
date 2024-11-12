@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# URL Shortener
+
+A URL shortener application built with Next.js, PostgreSQL, Prisma, and ShadCN UI.
+
+## Features
+- Shorten long URLs into compact links
+- Store and manage shortened URLs in a PostgreSQL database
+- View statistics for each shortened URL
+- Modern and minimalistic UI with ShadCN components
+
+## Technologies
+- **Next.js** - Framework for server-rendered React applications
+- **Prisma** - ORM for seamless database interaction with PostgreSQL
+- **ShadCN** - Styled component library for UI
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- [Node.js](https://nodejs.org/)
+- [PostgreSQL](https://www.postgresql.org/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Installation
+1. Clone the repository:
+ 
+   `git clone https://github.com/Amir-Kermanshahani/url-shortener.git`
+   
+   `cd url-shortener`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Install dependencies:
+   `npm install`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+4. Configure environment variables: Create a .env file in the root directory with:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   `DATABASE_URL=your_postgres_database_url`
 
-## Learn More
+### Database Setup
 
-To learn more about Next.js, take a look at the following resources:
+Run Prisma migrations:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`npx prisma migrate dev`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Running the Application
 
-## Deploy on Vercel
+Start the development server:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`npm run dev`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Access the application at http://localhost:3000.
+
+## License
+
+This project is licensed under the MIT License.
+
+
