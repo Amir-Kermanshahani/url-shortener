@@ -2,6 +2,8 @@
 
 A URL shortener application built with Next.js, PostgreSQL, Prisma, and ShadCN UI.
 
+![url-shortener](https://github.com/user-attachments/assets/408fa6a7-5c95-4a61-b32a-dee7ecf3d543)
+
 ## Features
 - Shorten long URLs into compact links
 - Store and manage shortened URLs in a PostgreSQL database
